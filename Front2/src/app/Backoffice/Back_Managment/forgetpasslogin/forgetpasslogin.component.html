@@ -1,0 +1,59 @@
+<section class="section section-shaped section-lg d-flex justify-content-center align-items-center" style="height: 100vh;">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-sm-5"> <!-- Réduction de la taille de la colonne à 'col-sm-5' -->
+        <div class="card">
+          <div class="card-body">
+            <form [formGroup]="fg" (ngSubmit)="submitfg()">
+              <h5 class="card-title text-center">Sabora Plat Forme</h5>
+              <input type="text" class="form-control mb-3" placeholder="email" id="email" formControlName="email">
+
+              <!-- Boutons alignés et bleus -->
+              <div class="d-grid gap-2">
+                <button class="btn btn-custom mt-2">Vérifier</button>
+                <button type="button" class="btn btn-custom mt-2" (click)="resendcode($event)">
+                  Renvoyer le code de vérification
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <!-- Deuxième colonne pour le mot de passe -->
+      <div class="col-sm-5" *ngIf="showResetPasswordCard"> <!-- Ajustement de la taille également -->
+        <div class="card">
+          <div class="card-body">
+            <form [formGroup]="fgreset" (ngSubmit)="submitfgreset()">
+              <h5 class="card-title text-center">Entrer votre nouveaux mot de passe</h5>
+              <div class="form-group">
+                <label for="code">Enter the code from your mail</label>
+                <input type="text" id="code" class="form-control mt-2" placeholder="Code de vérification" formControlName="code">
+              </div>
+
+              <div class="form-group">
+                <label for="newPassword">New Password</label>
+                <input type="password" class="form-control" id="newPassword" formControlName="newPassword">
+                <div *ngIf="fgreset.get('newPassword')!.errors">
+                  <!-- Display validation error messages for newPassword -->
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="confirmPassword">Confirm Password</label>
+                <input type="password" class="form-control" id="confirmPassword" formControlName="confirmPassword">
+                <div *ngIf="fgreset.get('confirmPassword')!.errors">
+                  <!-- Display validation error messages for confirmPassword -->
+                </div>
+              </div>
+              <div *ngIf="fgreset.errors">
+                <p class="text-danger">Passwords do not match</p>
+              </div>
+              <button class="btn btn-custom mt-2">Submit</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

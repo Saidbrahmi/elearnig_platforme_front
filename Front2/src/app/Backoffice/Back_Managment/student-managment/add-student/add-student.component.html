@@ -1,0 +1,48 @@
+<form (ngSubmit)="addStudent()">
+    <div class="form-group">
+      <label for="firstname">First Name</label>
+      <input type="text" id="firstname" class="form-control" [(ngModel)]="student.firstname" name="firstname" required>
+    </div>
+  
+    <div class="form-group">
+      <label for="lastname">Last Name</label>
+      <input type="text" id="lastname" class="form-control" [(ngModel)]="student.lastname" name="lastname" required>
+    </div>
+  
+    <div class="form-group">
+      <label for="formation">Formation</label>
+      <input type="text" id="formation" class="form-control" [(ngModel)]="student.formation" name="formation" required>
+    </div>
+  
+    <div class="form-group">
+      <label for="phoneNumber">Phone Number</label>
+      <input type="text" id="phoneNumber" class="form-control" [(ngModel)]="student.phoneNumber" name="phoneNumber" required>
+    </div>
+  
+    <div class="form-group">
+      <label for="parentPhoneNumber">Parent Phone Number</label>
+      <input type="text" id="parentPhoneNumber" class="form-control" [(ngModel)]="student.parentPhoneNumber" name="parentPhoneNumber" required>
+    </div>
+  
+    <div class="form-group">
+      <label for="dateInscrit">Date Inscrit</label>
+      <input type="date" id="dateInscrit" class="form-control" [(ngModel)]="student.dateInscrit" name="dateInscrit" required>
+    </div>
+  
+    <div class="form-group">
+      <label for="price">Price</label>
+      <input type="number" id="price" class="form-control" [(ngModel)]="student.price" name="price" required>
+    </div>
+  
+    <div class="form-group">
+      <label for="status">Status</label>
+      <select id="status" class="form-control" [(ngModel)]="student.status" name="status" required>
+        <option value="INTERESTED">INTERESTED</option>
+        <option value="ENROLLED">ENROLLED</option>
+        <option value="NOT_INTERESTED">NOT INTERESTED</option>
+      </select>
+    </div>
+  
+    <button type="submit" class="btn btn-primary">Add Student</button>
+  </form>
+  

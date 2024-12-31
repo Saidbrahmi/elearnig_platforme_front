@@ -1,0 +1,108 @@
+/* Global Styles */
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f6f9;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full viewport height */
+}
+
+.card-container {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    background-color: #fff;
+    padding: 30px;
+    max-width: 400px; /* Consistent width for both registration and login */
+    width: 100%;
+}
+
+/* Form Input Styling */
+.form-group label {
+    font-weight: bold;
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+    display: block;
+}
+
+.form-control {
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    padding: 10px;
+    font-size: 0.95rem;
+}
+
+input::placeholder {
+    color: #6c757d;
+}
+
+.is-invalid {
+    border-color: #dc3545;
+}
+
+.invalid-feedback {
+    color: #dc3545;
+    font-size: 0.85rem;
+}
+
+/* Button Styles */
+.button-65, .button-55 {
+    background-color: #007bff;
+    border-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 4px;
+    width: 100%;
+    text-align: center;
+}
+
+.button-65:hover, .button-55:hover {
+    background-color: #0056b3;
+    border-color: #004085;
+}
+
+.btn-block {
+    display: block;
+    width: 100%;
+    margin-top: 10px;
+}
+
+/* Alert Messages */
+.alert {
+    margin-top: 20px;
+}
+
+.alert-warning {
+    background-color: #fff3cd;
+    color: #856404;
+    border-color: #ffeeba;
+}
+
+.alert-success {
+    background-color: #d4edda;
+    color: #155724;
+    border-color: #c3e6cb;
+}
+
+/* Links */
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .card-container {
+        padding: 20px;
+    }
+}

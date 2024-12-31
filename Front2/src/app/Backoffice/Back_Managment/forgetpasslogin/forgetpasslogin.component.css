@@ -1,0 +1,30 @@
+/* Style personnalisé pour les boutons */
+.btn-custom {
+    background-color: #007bff; /* Bleu */
+    color: white;
+    border-radius: 25px; /* Bouton arrondi */
+    padding: 10px 20px; /* Espace interne */
+    font-size: 16px; /* Taille du texte */
+    border: none; /* Sans bordure */
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn-custom:hover {
+    background-color: #0056b3; /* Couleur bleue plus foncée au survol */
+  }
+  
+  /* Centrer le contenu sur toute la hauteur de la page */
+  .section-lg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  /* Ajuster le formulaire pour qu'il soit bien centré et espacé */
+  .card {
+    border-radius: 15px; /* Rendre les bords de la carte arrondis */
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1); /* Légère ombre autour de la carte */
+    max-width: 400px; /* Limite la largeur de la carte */
+  }
+  

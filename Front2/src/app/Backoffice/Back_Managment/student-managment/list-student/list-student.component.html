@@ -1,0 +1,72 @@
+<body>
+  <div class="pcoded-main-container">
+    <div class="pcoded-wrapper">
+      <div class="pcoded-content">
+        <div class="pcoded-inner-content">
+          <div class="main-body">
+            <div class="page-wrapper">
+              <!-- [ Main Content ] start -->
+              <div class="row">
+                <div class="col-sm-12">
+                  <div class="card">
+                    <div class="card-header">
+                      <h5>Student List</h5>
+                      <input class="form-control mt-2" type="text" placeholder="Search..." [(ngModel)]="search">
+                      <!-- Button to get total commission -->
+                      <button class="btn btn-info mt-2" (click)="getTotalCommission()">Total Commission</button>
+                      <p *ngIf="totalCommission !== undefined">Total Commission: {{ totalCommission | currency }}</p>
+                    </div>
+
+                    <div class="card-body">
+                      <h5></h5>
+                      <hr>
+                      <table class="table table-bordered">
+                        <thead>
+                          <tr>
+                            <th>First Name</th>
+                            <th>Last Name</th>
+                            <th>Formation</th>
+                            <th>Phone Number</th>
+                            <th>Parent Phone Number</th>
+                            <th>Date Inscrit</th>
+                            <th>Price</th>
+                            <th>Status</th>
+                           
+                            <th>Actions</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr *ngFor="let stu of student | filter:search">
+                            <td>{{ stu.firstname }}</td>
+                            <td>{{ stu.lastname }}</td>
+                            <td>{{ stu.formation }}</td>
+                            <td>{{ stu.phoneNumber }}</td>
+                            <td>{{ stu.parentPhoneNumber }}</td>
+                            <td>{{ stu.dateInscrit | date }}</td>
+                            <td>{{ stu.price | currency }}</td>
+                            <td>{{ stu.status }}</td>
+                           
+      
+                            <td>
+                              <button class="btn btn-warning" [routerLink]="['/update-student', stu.id]">Edit</button>
+                              <button class="btn btn-success" (click)="removeStudent(stu.id)">Delete</button>
+                           <!--   <button class="btn btn-info" (click)="getCommissionForStudent(stu.id)">Get Commission</button>
+                           -->
+                          </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                      <hr>
+                      <button id="addButton" type="button" class="btn btn-primary" routerLink="../add-student">Add Student</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- [ Main Content ] end -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
